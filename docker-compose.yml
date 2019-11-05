@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    mysqlsrv:
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: "mysql"
+            MYSQL_DATABASE: "estacio_vendas"
+        ports:
+            - "3306:3306"
+        volumes:
+            - /home/edilson/Volumes/MySql:/var/lib/mysql
+        networks:
+            - db-network
+            
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080
+        networks:
+            - db-network
+            
+networks:
+    db-network:
+        driver: bridge
