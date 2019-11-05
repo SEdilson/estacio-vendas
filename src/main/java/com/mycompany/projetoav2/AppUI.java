@@ -103,6 +103,8 @@ public class AppUI extends javax.swing.JFrame {
                 new AppUI().setVisible(true);
             }
         });
+        
+        ConexaoDB.getConexaoDB();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
