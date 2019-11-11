@@ -5,10 +5,7 @@
  */
 package com.mycompany.projetoav2;
 
-import java.sql.Driver;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -17,13 +14,13 @@ import java.util.logging.Logger;
  */
 public class ConexaoDB {
     
-    public static Connection conn = null;
+    public static Connection conn;
     
     public ConexaoDB() {
         
     }
     
-    public static void getConexaoDB() {
+    public static Connection getConexaoDB() {
         
         try {
             String driverName = "com.mysql.jdbc.Driver";
@@ -36,11 +33,10 @@ public class ConexaoDB {
             String senha = "mysql";
             
             conn = DriverManager.getConnection(url, user, senha);
-            System.out.print("Conectado com sucesso");
-        } catch(ClassNotFoundException ex) {
-            System.out.println("Driver não encontrado");
-        } catch(SQLException ex) {
-            System.out.println("Não foi possível conectar ao banco de dados.");
+            return conn;
+        } catch(ClassNotFoundException | SQLException ex) {
+            System.out.println("Não foi possível conectar");
+            return null;
         }
     }
 }

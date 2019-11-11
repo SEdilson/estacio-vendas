@@ -5,6 +5,10 @@
  */
 package com.mycompany.projetoav2;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author edilson
@@ -40,6 +44,11 @@ public class AppUI extends javax.swing.JFrame {
         cadastraButton.setText("Adicionar");
 
         produtoButton.setText("Produto");
+        produtoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                produtoButtonActionPerformed(evt);
+            }
+        });
         cadastraButton.add(produtoButton);
 
         clienteButton.setText("Cliente");
@@ -69,6 +78,10 @@ public class AppUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void produtoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoButtonActionPerformed
+
+    }//GEN-LAST:event_produtoButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -103,7 +116,6 @@ public class AppUI extends javax.swing.JFrame {
                 new AppUI().setVisible(true);
             }
         });
-        
         ConexaoDB.getConexaoDB();
     }
 
