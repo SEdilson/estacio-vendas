@@ -6,6 +6,7 @@
 package com.mycompany.projetoav2;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -52,6 +53,11 @@ public class AppUI extends javax.swing.JFrame {
         cadastraButton.add(produtoButton);
 
         clienteButton.setText("Cliente");
+        clienteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clienteButtonActionPerformed(evt);
+            }
+        });
         cadastraButton.add(clienteButton);
 
         menuApp.add(cadastraButton);
@@ -80,8 +86,12 @@ public class AppUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void produtoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produtoButtonActionPerformed
-
+        new CadastroProduto().setVisible(true);
     }//GEN-LAST:event_produtoButtonActionPerformed
+
+    private void clienteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clienteButtonActionPerformed
+        new CadastroCliente().setVisible(true);
+    }//GEN-LAST:event_clienteButtonActionPerformed
 
     /**
      * @param args the command line arguments

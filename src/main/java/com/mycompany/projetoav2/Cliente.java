@@ -27,17 +27,6 @@ public class Cliente {
         this.id = id;
     }
     
-    public int calculaIdade() {
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dataNasc = LocalDate.parse(this.dataNasc, dateFormat);
-        LocalDate dataAtual = LocalDate.now();
-        if((dataNasc != null) && (dataAtual != null)) {
-            return Period.between(dataNasc, dataAtual).getYears();
-        } else {
-            return 0;
-        }
-    }
-    
     public String getNome() {
         return nome;
     }
